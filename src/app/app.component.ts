@@ -1,3 +1,4 @@
+import { CartService } from './cart.service';
 import { db } from './db';
 import { Component } from '@angular/core';
 import { Item } from './item.interface';
@@ -10,18 +11,18 @@ import { Item } from './item.interface';
 export class AppComponent {
 
   items: Item[] = db;
-  cart: Item[] = [];
+  cart: Item[];
 
-  constructor() {
-
+  constructor(private cartService: CartService) {
+    this.cart = this.cartService.cart;
   }
 
   addItemToCart(item: Item) {
-    this.cart.push(item);
+    this.cartService.addItemToCart(item);
   }
 
   removeFromCart(item: Item) {
-    this.cart = this.cart.filter(cartItem => cartItem._id !== item._id);
+    this.cartService.removeFromCart(item);
   }
 
 
