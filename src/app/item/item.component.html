@@ -1,0 +1,11 @@
+Item component
+<div class="item" *ngIf="item">
+  <div class="title">{{ item.description }}</div>
+  <div class="price">{{ item.price / 100 | currency }}</div>
+  <div class="image">
+    <img [src]="item.imageUrl" />
+  </div>
+
+  <button (click)="addToCartClicked()" *ngIf="!isInCart">Add To Cart</button>
+  <button (click)="removeFromCartClicked()" *ngIf="isInCart">Remove from Cart</button>
+</div>
