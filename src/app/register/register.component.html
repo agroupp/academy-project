@@ -1,0 +1,33 @@
+<form [formGroup]="form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" />
+  </mat-form-field>
+
+  <small
+    class="error"
+    *ngIf="!form.controls['email'].valid && form.controls['email'].touched && form.controls['email'].hasError('required')"
+  >
+    Email is required
+  </small>
+  <small
+    class="error"
+    *ngIf="!form.controls['email'].valid && form.controls['email'].touched && form.controls['email'].hasError('email')"
+  >
+    Email is invalid format
+  </small>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>password</mat-label>
+    <input matInput placeholder="" type="password" formControlName="password" />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="submit()" [disabled]="!form.valid">Register</button>
+
+  {{ form.value | json }}
+</form>

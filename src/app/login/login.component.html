@@ -1,0 +1,26 @@
+<form #form="ngForm" (ngSubmit)="submit(form)">
+  
+    <mat-label>email</mat-label>
+    <input ngModel name="email" #email="ngModel" required email />
+
+    <small class="error" *ngIf="!email.valid && email.touched && email.hasError('required')">
+        Email is required
+    </small>
+    <small class="error" *ngIf="!email.valid && email.touched && email.hasError('email') ">
+        Email is invalid format
+    </small>
+  
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>password</mat-label>
+    <input
+      matInput
+      placeholder=""
+      type="password"
+      ngModel
+      name="password"
+      #password="ngModel"
+    />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" [disabled]="!form.valid">Login</button>
+</form>

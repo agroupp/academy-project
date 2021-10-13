@@ -1,7 +1,9 @@
+import { AuthService } from './auth.service';
 import { CartService } from './cart.service';
 import { db } from './db';
 import { Component } from '@angular/core';
 import { Item } from './item.interface';
+import { User } from './user.interface';
 
 @Component({
   selector: 'app-root',
@@ -10,19 +12,14 @@ import { Item } from './item.interface';
 })
 export class AppComponent {
 
-  items: Item[] = db;
-  cart: Item[];
+  user: User | null = null;
 
-  constructor(private cartService: CartService) {
-    this.cart = this.cartService.cart;
+  constructor(private authService: AuthService) {
+    this.authService.getUser().subscribe((user: User | null) => this.user = user);
   }
 
-  addItemToCart(item: Item) {
-    this.cartService.addItemToCart(item);
-  }
-
-  removeFromCart(item: Item) {
-    this.cartService.removeFromCart(item);
+  logout(){
+    this.authService.logout();
   }
 
 

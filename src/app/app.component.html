@@ -1,14 +1,17 @@
-<div class="cart">
-  <h1>My shopping cart: ({{cart.length}})</h1>
+<mat-toolbar color="primary" class="toolbar">
+  <span>The Best Marketplace</span>
+  <a routerLink="login">
+    <div *ngIf="!user; else elseBlock">Login</div>
+  </a>
+  <ng-template #elseBlock>
+    <div (click)="logout()">Logout</div>
+  </ng-template>
+</mat-toolbar>
 
-  <app-item [item]="itemFromCart" [isInCart]="true" *ngFor="let itemFromCart of cart"
-  (removeFromCart)="removeFromCart($event)"></app-item>
-</div>
-
-<hr />
-
-<div class="feed">
-  <h1>Shopping Feed:</h1>
-
-  <app-item [item]="itemFromFeed" (addToCart)="addItemToCart($event)" *ngFor="let itemFromFeed of items"></app-item>
-</div>
+<ul>
+  <li>
+    <a routerLink="/"> Feed </a>
+  </li>
+  <li><a routerLink="/cart"> Cart </a></li>
+</ul>
+<router-outlet></router-outlet>

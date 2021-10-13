@@ -1,20 +1,26 @@
 import { Injectable } from '@angular/core';
 import { Item } from './item.interface';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  cart: Item[] = [];
+  cart: BehaviorSubject<Item[]> = new BehaviorSubject<Item[]>([]);
 
   constructor() { }
 
   addItemToCart(item: Item) {
-    this.cart.push(item);
+    // this.cart.push(item);
+    const currentCart = this.cart.getValue();
+    currentCart.push(item);
+    this.cart.next(currentCart);
   }
 
   removeFromCart(item: Item) {
-    this.cart = this.cart.filter(cartItem => cartItem._id !== item._id);
+    let currentCart = this.cart.getValue();
+    currentCart = currentCart.filter(cartItem => cartItem._id !== item._id);
+    this.cart.next(currentCart);
   }
 }

@@ -1,0 +1,10 @@
+<div class="cart">
+  <h1>My shopping cart: ({{ cart.length }})</h1>
+
+  <app-item
+    [item]="itemFromCart"
+    [isInCart]="true"
+    *ngFor="let itemFromCart of cart"
+    (removeFromCart)="removeFromCart($event)"
+  ></app-item>
+</div>
