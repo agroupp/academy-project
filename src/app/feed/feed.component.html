@@ -1,6 +1,13 @@
 <div class="feed">
   <h1>Shopping Feed:</h1>
 
+  <input
+    matInput
+    placeholder="Seach for your book..."
+    (input)="search($event.target.value)"
+  />
+
+
   <app-item
     [item]="itemFromFeed"
     (addToCart)="addItemToCart($event)"

@@ -16,6 +16,7 @@ export class CartComponent implements OnInit {
       this.cart = result;
       console.log('new cart arrived', result)
     })
+
   }
 
   ngOnInit(): void {

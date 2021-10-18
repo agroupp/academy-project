@@ -1,21 +1,21 @@
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
+
+
 import { CartComponent } from './cart/cart.component';
-import { FeedComponent } from './feed/feed.component';
+
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
+  { path: 'login', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
 
-  { path: 'feed', component: FeedComponent },
-  { path: 'cart', component: CartComponent }
+  { path: 'feed', loadChildren: () => import('./feed/feed.module').then(m => m.FeedModule) },
+  { path: 'cart', loadChildren: () => import('./cart/cart.module').then(m => m.CartModule) }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

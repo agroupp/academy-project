@@ -11,13 +11,21 @@
 
   <small
     class="error"
-    *ngIf="!form.controls['email'].valid && form.controls['email'].touched && form.controls['email'].hasError('required')"
+    *ngIf="
+      !form.controls['email'].valid &&
+      form.controls['email'].touched &&
+      form.controls['email'].hasError('required')
+    "
   >
     Email is required
   </small>
   <small
     class="error"
-    *ngIf="!form.controls['email'].valid && form.controls['email'].touched && form.controls['email'].hasError('email')"
+    *ngIf="
+      !form.controls['email'].valid &&
+      form.controls['email'].touched &&
+      form.controls['email'].hasError('email')
+    "
   >
     Email is invalid format
   </small>
@@ -27,7 +35,12 @@
     <input matInput placeholder="" type="password" formControlName="password" />
   </mat-form-field>
 
-  <button mat-raised-button color="primary" (click)="submit()" [disabled]="!form.valid">Register</button>
-
-  {{ form.value | json }}
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="submit()"
+    [disabled]="!form.valid"
+  >
+    Register
+  </button>
 </form>

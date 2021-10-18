@@ -20,7 +20,7 @@ export class CartService {
 
   removeFromCart(item: Item) {
     let currentCart = this.cart.getValue();
-    currentCart = currentCart.filter(cartItem => cartItem._id !== item._id);
+    currentCart = currentCart.filter(cartItem => cartItem.id !== item.id);
     this.cart.next(currentCart);
   }
 }
