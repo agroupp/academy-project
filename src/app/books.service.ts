@@ -9,10 +9,12 @@ import { map } from 'rxjs/operators';
 })
 export class BooksService {
 
+  PAGE_SIZE = 20;
+
   constructor(private httpClient: HttpClient) { }
 
-  getBooks(term: string): Observable<Item[]> {
-    return this.httpClient.get<Item[]>(`https://www.googleapis.com/books/v1/volumes?q=${term}`)
+  getBooks(term: string, page = 0): Observable<Item[]> {
+    return this.httpClient.get<Item[]>(`https://www.googleapis.com/books/v1/volumes?q=${term}&startIndex=${this.PAGE_SIZE * page}&maxResults=${this.PAGE_SIZE}`)
       .pipe(
         map((res: any) => res.items),
         map((booksItems: any[]) => booksItems.map(item => ({

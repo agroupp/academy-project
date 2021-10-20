@@ -1,11 +1,14 @@
-
 <div class="item" *ngIf="item">
-  <div class="title">{{ item.title }}</div>
-  <!-- <div class="price">{{ item.price / 100 | currency }}</div> -->
+  <div class="title" appChangeBgColor="yellow">{{ item.title | changeTitle }}</div>
+  <div class="price">{{ 199990 / 100 | currency: "CAD" }}</div>
   <div class="image">
     <img [src]="item.imageUrl" />
   </div>
 
+  <div>{{ "10/10/21" | date: "long" }}</div>
+
   <button (click)="addToCartClicked()" *ngIf="!isInCart">Add To Cart</button>
-  <button (click)="removeFromCartClicked()" *ngIf="isInCart">Remove from Cart</button>
+  <button (click)="removeFromCartClicked()" *ngIf="isInCart">
+    Remove from Cart
+  </button>
 </div>

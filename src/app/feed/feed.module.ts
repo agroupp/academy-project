@@ -5,12 +5,14 @@ import { CommonModule } from '@angular/common';
 
 import { FeedRoutingModule } from './feed-routing.module';
 import { ItemModule } from '../item/item.module';
+import { InfinteScrollDirective } from '../infinte-scroll.directive';
 
 
 
 @NgModule({
   declarations: [
-    FeedComponent
+    FeedComponent,
+    InfinteScrollDirective,
   ],
   imports: [
     CommonModule,

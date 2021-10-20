@@ -16,6 +16,7 @@ export class FeedComponent implements OnInit, OnDestroy {
   items: Item[] = [];
 
   term: string = '';
+  page = 0;
 
   search$: Subject<string> = new Subject<string>();
   subscription?: Subscription;
@@ -29,7 +30,7 @@ export class FeedComponent implements OnInit, OnDestroy {
         debounceTime(300),
         distinctUntilChanged(),
         switchMap(
-          (searchTerm: string) => this.booksService.getBooks(searchTerm)
+          (searchTerm: string) => this.booksService.getBooks(searchTerm, 1)
         )
       ).subscribe((itemsResult: Item[]) => this.items = itemsResult);
   }
@@ -43,6 +44,12 @@ export class FeedComponent implements OnInit, OnDestroy {
     this.search$.next(term);
     // this.booksService.getBooks(term)
     //   .subscribe((itemsResult: Item[]) => this.items = itemsResult);
+  }
+
+  loadMore() {
+    this.page++;
+    this.booksService.getBooks(this.term, this.page).subscribe((result: Item[]) =>
+      this.items = [...this.items, ...result]);
   }
 
   ngOnDestroy(): void {
