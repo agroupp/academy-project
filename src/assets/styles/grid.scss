@@ -1,0 +1,10 @@
+$arr: 2 3 4 6 8;
+
+
+@each $size in $arr{
+  .grd-#{$size}{
+    display: grid;
+    grid-template-columns: repeat($size,auto);
+  }
+}
+

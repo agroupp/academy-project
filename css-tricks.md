@@ -3,22 +3,21 @@
 ## Layout
 - [ ] background
 - [ ] shadow
-- [ ] background
 
 ## Flex
-- [ ] `display: flex;`
-- [ ] `flex-direction: row | row-reverse | column | column-reverse;`
-- [ ] `flex-wrap: nowrap | wrap | wrap-reverse;`
-- [ ] `flex-wrap: nowrap | wrap | wrap-reverse;`
-- [ ] `flex-flow: column wrap;`
-- [ ] `justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe;`
-- [ ] `align-items: stretch | flex-start | flex-end | center | baseline | first baseline | last baseline | start | end | self-start | self-end + ... safe | unsafe;`
-- [ ] `align-content: flex-start | flex-end | center | space-between | space-around | space-evenly | stretch | start | end | baseline | first baseline | last baseline + ... safe | unsafe;`
+- [x] `display: flex;`
+- [x] `flex-direction: row | row-reverse | column | column-reverse;`
+- [x] `flex-wrap: nowrap | wrap | wrap-reverse;`
+- [x] `flex-wrap: nowrap | wrap | wrap-reverse;`
+- [X] `flex-flow: column wrap;`
+- [X] `justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe;`
+- [x] `align-items: stretch | flex-start | flex-end | center | baseline | first baseline | last baseline | start | end | self-start | self-end + ... safe | unsafe;`
+- [x] `align-content: flex-start | flex-end | center | space-between | space-around | space-evenly | stretch | start | end | baseline | first baseline | last baseline + ... safe | unsafe;`
 
 
 ## Grid
-- [ ] `display: grid;`
-- [ ] `place-content: center | start | end`
+- [X] `display: grid;`
+- [X] `place-content: center | start | end`
 - [ ] `grid-template-columns:`
     - 20px 20px 30px
     - 20% 80%

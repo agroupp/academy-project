@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ItemModule } from './item/item.module';
 import { ChangeBgColorDirective } from './change-bg-color.directive';
 import { InfinteScrollDirective } from './infinte-scroll.directive';
+import {LayoutModule} from "./layout/layout.module";
 
 
 
@@ -31,7 +32,8 @@ import { InfinteScrollDirective } from './infinte-scroll.directive';
     ReactiveFormsModule,
     MatToolbarModule,
     HttpClientModule,
-    ItemModule
+    ItemModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

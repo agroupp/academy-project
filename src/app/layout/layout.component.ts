@@ -6,18 +6,13 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
-  tiles: string[] = [];
 
   constructor() {
   }
 
   ngOnInit(): void {
-    this.generateBoxes();
+    // this.generateTiles();
   }
 
-  generateBoxes() {
-    for (let i = 0; i < 10; i++) {
-      this.tiles.push('' + i);
-    }
-  }
+
 }
