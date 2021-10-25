@@ -18,23 +18,23 @@
 ## Grid
 - [X] `display: grid;`
 - [X] `place-content: center | start | end`
-- [ ] `grid-template-columns:`
+- [X] `grid-template-columns:`
     - 20px 20px 30px
     - 20% 80%
     - 1fr 2fr 3fr
-- [ ] `grid-template-rows:`
+- [X] `grid-template-rows:`
     - 20px 20px 30px
     - 20% 80%
     - 1fr 2fr 3fr
-- [ ] `grid-template-rows:`
+- [X] `grid-template-rows:`
   - 20px 20px 30px
   - 20% 80%
   - 1fr 2fr 3fr
-- [ ] `grid-column-start`
-- [ ] `grid-column-end`
-- [ ] `grid-column: 1 / 3;`
-- [ ] `repeat(4,auto);`
-- [ ] `grid-template:`
+- [x] `grid-column-start`
+- [x] `grid-column-end`
+- [x] `grid-column: 1 / 3;`
+- [X] `repeat(4,auto);`
+- [x] `grid-template:`
 
 
 

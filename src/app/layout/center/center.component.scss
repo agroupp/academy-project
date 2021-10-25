@@ -1,0 +1,17 @@
+:host {
+
+  .wrapper {
+    width: 1000px;
+    max-width: 92vw;
+    margin: auto;
+    display: grid;
+    place-content:start end;
+    height: 100vh;
+    outline: solid red 1px;
+    .img{
+      outline: solid green 1px;
+
+    }
+
+  }
+}

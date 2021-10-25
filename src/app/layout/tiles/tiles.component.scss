@@ -1,0 +1,41 @@
+@import "mixin";
+@import "media";
+
+:host {
+
+  .wrapper {
+
+    grid-gap: 10px;
+
+    .tile {
+      color:$main-background-color;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+      border-radius: 10px;
+      background: #fbf3f3;
+
+      span {
+        font-size: large;
+      }
+
+      &[title="1"] {
+        background: yellow;
+        grid-column-end: -1;
+      }
+    }
+
+    .tile1[title='2'] {
+      background: pink;
+      height: 320px;
+    }
+
+    .tile1[title='7'] {
+      background: red;
+      height: 120px;
+    }
+
+    button{
+      @include ac-button();
+    }
+  }
+}
