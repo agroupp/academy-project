@@ -1,38 +1,39 @@
 import { Item } from './../item.interface';
 import { BooksService } from './../books.service';
 import { CartService } from './../cart.service';
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subject, Subscription } from 'rxjs';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
+import { Subject, Subscription, Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 
 @Component({
   selector: 'app-feed',
   templateUrl: './feed.component.html',
-  styleUrls: ['./feed.component.scss']
+  styleUrls: ['./feed.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FeedComponent implements OnInit, OnDestroy {
 
-  items: Item[] = [];
+  items$?: Observable<Item[]>;
 
   term: string = '';
   page = 0;
 
   search$: Subject<string> = new Subject<string>();
-  subscription?: Subscription;
+  // subscription?: Subscription;
 
   constructor(private cartService: CartService, private booksService: BooksService) { }
 
 
   ngOnInit(): void {
-    this.subscription = this.search$
+    this.items$ = this.search$
       .pipe(
         debounceTime(300),
         distinctUntilChanged(),
         switchMap(
           (searchTerm: string) => this.booksService.getBooks(searchTerm, 1)
         )
-      ).subscribe((itemsResult: Item[]) => this.items = itemsResult);
+      );
   }
 
 
@@ -48,12 +49,12 @@ export class FeedComponent implements OnInit, OnDestroy {
 
   loadMore() {
     this.page++;
-    this.booksService.getBooks(this.term, this.page).subscribe((result: Item[]) =>
-      this.items = [...this.items, ...result]);
+    // this.booksService.getBooks(this.term, this.page).subscribe((result: Item[]) =>
+    //   this.items = [...this.items, ...result]);
   }
 
   ngOnDestroy(): void {
-    this.subscription?.unsubscribe();
+    // this.subscription?.unsubscribe();
   }
 
 

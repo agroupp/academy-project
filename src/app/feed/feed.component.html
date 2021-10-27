@@ -7,10 +7,10 @@
     (input)="search($event.target.value)"
   />
 
-
-  <app-item
-    [item]="itemFromFeed"
-    (addToCart)="addItemToCart($event)"
-    *ngFor="let itemFromFeed of items"
-  ></app-item>
+  <ng-container *ngIf="items$ | async as items">
+    <app-feed-presentation
+      [items]="items"
+      (addToCart)="addItemToCart($event)"
+    ></app-feed-presentation>
+  </ng-container>
 </div>

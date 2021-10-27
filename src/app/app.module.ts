@@ -1,3 +1,6 @@
+import { environment } from './../environments/environment';
+
+
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { NgModule } from '@angular/core';
@@ -16,6 +19,9 @@ import { ItemModule } from './item/item.module';
 import { ChangeBgColorDirective } from './change-bg-color.directive';
 import { InfinteScrollDirective } from './infinte-scroll.directive';
 import {LayoutModule} from "./layout/layout.module";
+import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
+
+
 
 
 
@@ -23,6 +29,7 @@ import {LayoutModule} from "./layout/layout.module";
 @NgModule({
   declarations: [
     AppComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -33,7 +40,8 @@ import {LayoutModule} from "./layout/layout.module";
     MatToolbarModule,
     HttpClientModule,
     ItemModule,
-    LayoutModule
+    LayoutModule,
+    environment.production ? [] : AkitaNgDevtools.forRoot({name: 'store', maxAge: 25})
   ],
   providers: [],
   bootstrap: [AppComponent]

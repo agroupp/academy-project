@@ -1,17 +1,17 @@
-<!--<mat-toolbar color="primary" class="toolbar">-->
-<!--  <span>The Best Marketplace</span>-->
-<!--  <a routerLink="login">-->
-<!--    <div *ngIf="!user; else elseBlock">Login</div>-->
-<!--  </a>-->
-<!--  <ng-template #elseBlock>-->
-<!--    <div (click)="logout()">Logout</div>-->
-<!--  </ng-template>-->
-<!--</mat-toolbar>-->
+<mat-toolbar color="primary" class="toolbar">
+  <span>The Best Marketplace</span>
+  <a routerLink="login">
+    <div *ngIf="!user; else elseBlock">Login</div>
+  </a>
+  <ng-template #elseBlock>
+    <div (click)="logout()">Logout</div>
+  </ng-template>
+</mat-toolbar>
 
-<!--<ul>-->
-<!--  <li>-->
-<!--    <a routerLink="/"> Feed </a>-->
-<!--  </li>-->
-<!--  <li><a routerLink="/cart"> Cart </a></li>-->
-<!--</ul>-->
+<ul>
+  <li>
+    <a routerLink="/"> Feed </a>
+  </li>
+  <li><a routerLink="/cart"> Cart </a></li>
+</ul>
 <router-outlet></router-outlet>

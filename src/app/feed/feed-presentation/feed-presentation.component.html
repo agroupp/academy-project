@@ -1,0 +1,5 @@
+<app-item
+    [item]="itemFromFeed"
+    (addToCart)="addToCart.emit(itemFromFeed)"
+    *ngFor="let itemFromFeed of items"
+  ></app-item>
