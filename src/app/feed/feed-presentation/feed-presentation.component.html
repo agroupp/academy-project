@@ -1,5 +1,9 @@
-<app-item
-    [item]="itemFromFeed"
-    (addToCart)="addToCart.emit(itemFromFeed)"
-    *ngFor="let itemFromFeed of items"
-  ></app-item>
+<div class="scroll">
+  <div class="grid">
+    <app-item
+      [item]="itemFromFeed"
+      (addToCart)="addToCart.emit(itemFromFeed)"
+      *ngFor="let itemFromFeed of items"
+    ></app-item>
+  </div>
+</div>

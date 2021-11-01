@@ -11,15 +11,10 @@
   </mat-form-field>
 
 
-
-  <div class="scroll">
-    <div class="grid">
       <ng-container *ngIf="items$ | async as items">
         <app-feed-presentation
           [items]="items"
           (addToCart)="addItemToCart($event)"
         ></app-feed-presentation>
       </ng-container>
-    </div>
-  </div>
 </div>
