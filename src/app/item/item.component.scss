@@ -1,0 +1,11 @@
+@import "mixin";
+@import "animation";
+:host {
+  .item {
+    @extend .scale-up-center-3;
+    background: white;
+    border-radius: times8(2);
+    width: times8(38);
+    min-height: times8(20);
+  }
+}

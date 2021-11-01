@@ -1,10 +1,13 @@
 $arr: 2 3 4 6 8;
 
-
+.center{
+  display: grid;
+  place-content: center;
+}
 @each $size in $arr{
-  .grd-#{$size}{
+  .a-grd-#{$size}{
     display: grid;
     grid-template-columns: repeat($size,auto);
   }
-}
 
+}

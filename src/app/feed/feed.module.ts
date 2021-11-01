@@ -7,6 +7,7 @@ import { FeedRoutingModule } from './feed-routing.module';
 import { ItemModule } from '../item/item.module';
 import { InfinteScrollDirective } from '../infinte-scroll.directive';
 import { FeedPresentationComponent } from './feed-presentation/feed-presentation.component';
+import {MatInputModule} from "@angular/material/input";
 
 
 
@@ -19,7 +20,8 @@ import { FeedPresentationComponent } from './feed-presentation/feed-presentation
   imports: [
     CommonModule,
     FeedRoutingModule,
-    ItemModule
+    ItemModule,
+    MatInputModule
   ]
 })
 export class FeedModule { }

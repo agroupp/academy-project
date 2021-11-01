@@ -22,6 +22,7 @@ import {LayoutModule} from "./layout/layout.module";
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 
 
+import {MatListModule} from "@angular/material/list";
 
 
 
@@ -41,6 +42,7 @@ import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
     HttpClientModule,
     ItemModule,
     LayoutModule,
+    MatListModule,
     environment.production ? [] : AkitaNgDevtools.forRoot({name: 'store', maxAge: 25})
   ],
   providers: [],

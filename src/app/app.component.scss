@@ -1,5 +1,24 @@
-.toolbar{
-    display: flex;
-    justify-content: space-between;
-    
+@import "mixin";
+@import "media";
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+
 }
+
+.body {
+  display: grid;
+  grid-template-columns: times8(10) 1fr;
+  height: 95vh;
+
+  .side-bar {
+    background: $dark-color;
+
+    button {
+      color: white;
+
+    }
+  }
+}
+

@@ -7,11 +7,16 @@
     <div (click)="logout()">Logout</div>
   </ng-template>
 </mat-toolbar>
+<div class="body a-gap-col-4">
+  <div class="side-bar">
 
-<ul>
-  <li>
-    <a routerLink="/"> Feed </a>
-  </li>
-  <li><a routerLink="/cart"> Cart </a></li>
-</ul>
-<router-outlet></router-outlet>
+    <mat-action-list>
+      <button mat-list-item routerLink="/feed"> Feed</button>
+      <button mat-list-item routerLink="/cart"> Cart</button>
+    </mat-action-list>
+  </div>
+  <div class="router">
+
+    <router-outlet></router-outlet>
+  </div>
+</div>
