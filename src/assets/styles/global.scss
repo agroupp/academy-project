@@ -8,6 +8,14 @@ $arr: 2 3 4 6 8 10 12 14 20;
   .a-mrg-#{$size} {
     margin: times8($size);
   }
+  .a-mrg-y-#{$size} {
+    margin-bottom: times8($size);
+    margin-top: times8($size);
+  }
+  .a-mrg-x-#{$size} {
+    margin-left: times8($size);
+    margin-right: times8($size);
+  }
   .a-mrg-l-#{$size} {
     margin-left: times8($size);
   }
@@ -64,6 +72,7 @@ $arr: 2 3 4 6 8 10 12 14 20;
   font-family: 'Roberto', sans-serif;
   font-weight: 400;
   font-size: 20px;
+  @extend .a-mrg-y-2;
 }
 
 .a-sub-header {
