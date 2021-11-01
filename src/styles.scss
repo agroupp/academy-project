@@ -1,9 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
-@import "./assets/styles/grid.scss";
+@import "grid";
+@import "media";
+@import "theme";
+@import "fonts";
+@import "global";
+@import "animation";
+
 html,
 body {
   height: 100%;
 }
+
 body {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: $main-gray;
 }

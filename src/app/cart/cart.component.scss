@@ -1,0 +1,6 @@
+@import "mixin";
+:host{
+  .grid{
+    @include rsp-grid(times8(50));
+  }
+}

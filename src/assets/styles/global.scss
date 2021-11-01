@@ -1,0 +1,74 @@
+@import "mixin";
+
+$arr: 2 3 4 6 8 10 12 14 20;
+
+
+@each $size in $arr {
+
+  .a-mrg-#{$size} {
+    margin: times8($size);
+  }
+  .a-mrg-l-#{$size} {
+    margin-left: times8($size);
+  }
+  .a-mrg-r-#{$size} {
+    margin-right: times8($size);
+  }
+  .a-mrg-t-#{$size} {
+    margin-top: times8($size);
+  }
+  .a-mrg-b-#{$size} {
+    margin-bottom: times8($size);
+  }
+  .a-pad-#{$size} {
+    padding: times8($size);
+  }
+  .a-pad-l-#{$size} {
+    padding-left: times8($size);
+  }
+  .a-pad-r-#{$size} {
+    padding-right: times8($size);
+  }
+  .a-pad-t-#{$size} {
+    padding-top: times8($size);
+  }
+  .a-pad-b-#{$size} {
+    padding-bottom: times8($size);
+  }
+  .a-gap-row-#{$size} {
+    row-gap: times8($size);
+  }
+  .a-gap-col-#{$size} {
+    column-gap: times8($size);
+  }
+  .a-gap-#{$size} {
+    grid-gap: times8($size);
+  }
+}
+
+.a-flx {
+  display: flex;
+}
+
+.a-flx-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.a-flx-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.a-header {
+  font-family: 'Roberto', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.a-sub-header {
+  font-family: 'Roberto', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #b3afaf;
+}

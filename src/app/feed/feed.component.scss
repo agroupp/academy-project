@@ -1,0 +1,21 @@
+@import "mixin";
+@import "global";
+
+:host {
+  height: 100vh;
+
+  .scroll {
+    @extend .a-mrg-2;
+    height: 85vh;
+    overflow: auto;
+  }
+
+  .grid {
+    @extend .a-gap-2;
+    @include rsp-grid(times8(50));
+
+    app-item {
+      margin: auto;
+    }
+  }
+}
