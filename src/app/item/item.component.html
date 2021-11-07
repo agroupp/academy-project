@@ -8,7 +8,5 @@
   <div>{{ "10/10/21" | date: "long" }}</div>
 
   <button (click)="addToCartClicked()" *ngIf="!isInCart">Add To Cart</button>
-  <button (click)="removeFromCartClicked()" *ngIf="isInCart">
-    Remove from Cart
-  </button>
+  <button (click)="removeFromCartClicked()" *ngIf="isInCart">Remove from Cart</button>
 </div>
