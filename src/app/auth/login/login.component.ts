@@ -1,11 +1,12 @@
-import { AuthService } from '../auth.service';
+import {AuthService} from '../auth.service';
 
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 interface LoginForm {
   email: string;
   password: string;
+  twoFactory: string;
 }
 
 @Component({
@@ -16,19 +17,32 @@ interface LoginForm {
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  public formGroup?: FormGroup;
+  someValue: any;
+  constructor(private authService: AuthService, private fb: FormBuilder) {
+  }
 
   ngOnInit(): void {
-    // this.authService.login({
-    //   name: 'Eliran',
-    //   email: 'blabla@e-square.io'
-    // });
+    this.generateForm();
+
   }
 
-  submit(form: NgForm) {
-    this.authService.login(form.value);
+  public generateForm() {
+    this.formGroup = this.fb.group({
+      email:['',Validators.required],
+      password:['',Validators.compose([Validators.required,Validators.minLength(4)])],
+      twoFactory:['',Validators.required],
+    })
+    // setTimeout(()=>{
+    //   this.formGroup?.patchValue({email: 'arthur@e-squre.io', password: '1111', firstName: 'Mobi'});
+    //  const control = this.formGroup?.get('twoFactory')
+    // },5000)
   }
 
-  
+  submit(form:LoginForm ) {
+    // this.authService.login(form);
+    console.log(form);
+  }
+
 
 }

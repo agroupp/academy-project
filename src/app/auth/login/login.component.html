@@ -1,26 +1,64 @@
-<form #form="ngForm" (ngSubmit)="submit(form)">
-  
-    <mat-label>email</mat-label>
-    <input ngModel name="email" #email="ngModel" required email />
+<ng-container *ngIf="formGroup">
+  <div class="a-mrg-4">
 
-    <small class="error" *ngIf="!email.valid && email.touched && email.hasError('required')">
-        Email is required
-    </small>
-    <small class="error" *ngIf="!email.valid && email.touched && email.hasError('email') ">
-        Email is invalid format
-    </small>
-  
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>password</mat-label>
-    <input
-      matInput
-      placeholder=""
-      type="password"
-      ngModel
-      name="password"
-      #password="ngModel"
-    />
-  </mat-form-field>
+    <form [formGroup]="formGroup" (ngSubmit)="submit(formGroup?.value)">
+      <div class="body a-grd-1">
 
-  <button mat-raised-button color="primary" [disabled]="!form.valid">Login</button>
-</form>
+        <lib-text-input [label]="'Email'"
+                        [type]="'email'"
+                        formControlName="email"
+                        class="scale-up-center-2"></lib-text-input>
+        <lib-text-input [label]="'Password'"
+                        [type]="'password'"
+                        formControlName="password"
+                        class="scale-up-center-2"></lib-text-input>
+
+        <ac-two-factory [label]="'Two Factory'"
+                        formControlName="twoFactory"
+                        class="scale-up-center-2"></ac-two-factory>
+      </div>
+      <div class="a-flx">
+        <div class="a-mrg-2">
+          <button mat-raised-button color="primary">Login</button>
+        </div>
+        <div class="a-mrg-2">
+          <button mat-raised-button (click)="$event.preventDefault()">Register</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <lib-text-input [label]="'Two Factory'"
+                  [(ngModel)]="someValue"></lib-text-input>
+
+
+  <div>{{someValue}}</div>
+  <div>
+    {{formGroup.value |json}}
+  </div>
+</ng-container>
+
+
+<!--  -->
+<!--  -->
+<!--    <mat-label>email</mat-label>-->
+<!--    <input ngModel name="email" #email="ngModel" required email />-->
+
+<!--    <small class="error" *ngIf="!email.valid && email.touched && email.hasError('required')">-->
+<!--        Email is required-->
+<!--    </small>-->
+<!--    <small class="error" *ngIf="!email.valid && email.touched && email.hasError('email') ">-->
+<!--        Email is invalid format-->
+<!--    </small>-->
+
+<!--  <mat-form-field class="example-full-width" appearance="fill">-->
+<!--    <mat-label>password</mat-label>-->
+<!--    <input-->
+<!--      matInput-->
+<!--      placeholder=""-->
+<!--      type="password"-->
+<!--      ngModel-->
+<!--      name="password"-->
+<!--      #password="ngModel"-->
+<!--    />-->
+<!--  </mat-form-field>-->

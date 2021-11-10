@@ -2,6 +2,13 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "@academy": [
+        "dist/academy/academy",
+        "dist/academy",
+        "projects/academy/src/public-api.ts"
+      ]
+    },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

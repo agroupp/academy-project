@@ -1,0 +1,16 @@
+<form [formGroup]="form" autocomplete="off">
+  <div class="body" #formBody>
+
+    <ng-container *ngFor="let a of arr;let i = index">
+      <mat-form-field class="two-factory-num">
+        <input
+          class="input-{{a}}"
+          matInput
+          type="number"
+          [name]="a"
+          [formControlName]="a"
+          (input)="next(i+1)">
+      </mat-form-field>
+    </ng-container>
+  </div>
+</form>
