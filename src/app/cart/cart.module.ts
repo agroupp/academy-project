@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { CartRoutingModule } from './cart-routing.module';
 import { CartComponent } from './cart.component';
 import { ItemModule } from '../item/item.module';
+import {DragDropModule} from "@angular/cdk/drag-drop";
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { ItemModule } from '../item/item.module';
   imports: [
     CommonModule,
     CartRoutingModule,
-    ItemModule
+    ItemModule,
+    DragDropModule
   ]
 })
 export class CartModule { }

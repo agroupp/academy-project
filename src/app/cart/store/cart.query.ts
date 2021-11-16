@@ -10,7 +10,7 @@ import { tap, map } from 'rxjs/operators';
 export class CartQuery extends Query<CartState> {
 
     selectCart$: Observable<Item[]> = this.select(state => state.cart);
-    selectCartLenth$: Observable<number> = this.select('cart').pipe(map((items: Item[]) => items.length));
+    selectCartLength$: Observable<number> = this.select('cart').pipe(map((items: Item[]) => items.length));
 
     constructor(protected store: CartStore) {
         super(store);

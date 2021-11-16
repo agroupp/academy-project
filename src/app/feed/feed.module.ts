@@ -9,6 +9,7 @@ import { InfinteScrollDirective } from '../infinte-scroll.directive';
 import { FeedPresentationComponent } from './feed-presentation/feed-presentation.component';
 import {MatInputModule} from "@angular/material/input";
 import {TextInputModule} from "@academy";
+import {LayoutModule} from '@angular/cdk/layout';
 
 
 
@@ -23,7 +24,8 @@ import {TextInputModule} from "@academy";
     FeedRoutingModule,
     ItemModule,
     MatInputModule,
-    TextInputModule
+    TextInputModule,
+    LayoutModule
   ]
 })
 export class FeedModule { }

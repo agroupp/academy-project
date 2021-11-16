@@ -1,5 +1,7 @@
 <div class="item a-pad-2" *ngIf="item">
-  <div class="title a-header">{{ item.title | changeTitle }}</div>
+  <div class="title a-header" [cdkCopyToClipboard]="item.title"
+  (cdkCopyToClipboardCopied)="copyToClipboardCopied($event)"
+  >{{ item.title | changeTitle }}</div>
   <div class="price a-sub-header a-flx-end">{{ 199990 / 100 | currency: "CAD" }}</div>
   <div class="image center">
     <img [src]="item.imageUrl" />

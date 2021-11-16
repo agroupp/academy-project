@@ -1,12 +1,24 @@
-<div class="cart a-pad-2">
+<div class="cart a-pad-2 cart-boundary" cdkDropListGroup>
   <div class="a-header">My shopping cart: ({{ cart.length }})</div>
-  <div class="a-flx-wrap a-gap-col-3">
-
+  <div
+    cdkDropList
+    [cdkDropListData]="cart"
+    class="a-flx-wrap a-gap-col-3">
     <app-item
+      cdkDrag
+      cdkDragBoundary=".cart-boundary"
       [item]="itemFromCart"
       [isInCart]="true"
       *ngFor="let itemFromCart of cart"
       (removeFromCart)="removeFromCart($event)"
     ></app-item>
+  </div>
+
+
+  <div class="delete"
+       cdkDropList
+       (cdkDropListDropped)="dropTrash($event)"
+  >
+    <img src="assets/svg/delete_black_24dp.svg" alt="">
   </div>
 </div>

@@ -1,7 +1,8 @@
 <ng-container *ngIf="formGroup">
+  <div>{{currentScreenSize}}</div>
   <div class="a-mrg-4">
 
-    <form [formGroup]="formGroup" (ngSubmit)="submit(formGroup?.value)">
+    <form [formGroup]="formGroup" (ngSubmit)="submit()">
       <div class="body a-grd-1">
 
         <lib-text-input [label]="'Email'"
@@ -22,7 +23,7 @@
           <button mat-raised-button color="primary">Login</button>
         </div>
         <div class="a-mrg-2">
-          <button mat-raised-button (click)="$event.preventDefault()">Register</button>
+          <button mat-raised-button (click)="$event.preventDefault();register()">Register</button>
         </div>
       </div>
     </form>

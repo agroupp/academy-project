@@ -27,7 +27,7 @@ export class AppComponent {
     // this.cdr.detectChanges();
     // this.authService.getUser().subscribe((user: User | null) => this.user = user);
     this.authQuery.selectUser$.subscribe((user: User | null) => this.user = user);
-    this.cartQuery.selectCartLenth$.subscribe(cartLength => this.cartLenth = cartLength);
+    this.cartQuery.selectCartLength$.subscribe(cartLength => this.cartLenth = cartLength);
   }
 
   logout() {

@@ -1,6 +1,18 @@
 @import "mixin";
-:host{
-  .grid{
+
+:host {
+  .grid {
     @include rsp-grid(times8(50));
+  }
+
+  .delete {
+    height: times8(50);
+    width: times8(10);
+
+    img {
+      height: times8(9);
+      width: auto;
+      margin: auto;
+    }
   }
 }
